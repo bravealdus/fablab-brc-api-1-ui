@@ -1,5 +1,27 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+.main {
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+input[type="text"] {
+    font-size: 1.5em;
+    padding: 0;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: #ccc;
+    width: 100%;
+    margin: 40px 0;
+}
+
+input[type="text"]:focus {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #A4C639;
+}
+
+input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
