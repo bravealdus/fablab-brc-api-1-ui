@@ -37,7 +37,8 @@ class App extends React.Component {
       'user_email': this.state.user_email,
       'project_title': this.state.project_title 
     }
-    fetch('http://localhost:5000/check-in', {
+    const BASE_URL = process.env.IS_HEROKU ? 'https://fablab-brc-api-1.herokuapp.com/' : 'http://localhost:5000';
+    fetch(BASE_URL + '/check-in', {
         method: 'POST',
         mode: 'cors',
         body: JSON.stringify(data),
