@@ -132,6 +132,7 @@ class App extends React.Component {
         onChange={(e) => this.setState({project_status: e.target.value})} >
         <option value="incubando">Incubando</option>
         <option value="coworking">Coworking</option>
+        <option value="charla">Charla o Meetup</option>
       </select>
     )
   }
