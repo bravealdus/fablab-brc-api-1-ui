@@ -59,7 +59,7 @@ class App extends React.Component {
           <input type="text" placeholder="Email" value={this.state.user_email}
             onChange={(e) => this.setState({user_email: e.target.value})} />
 
-          <input type="text" placeholder="Projecto (optional)" value={this.state.project_title}
+          <input type="text" placeholder="Projecto (opcional)" value={this.state.project_title}
             onChange={(e) => this.setState({project_title: e.target.value})} />
         </div>
       )
