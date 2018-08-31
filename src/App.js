@@ -37,9 +37,10 @@ class App extends React.Component {
       'user_email': this.state.user_email,
       'project_title': this.state.project_title 
     }
-    const BASE_URL = process.env.IS_HEROKU ? 'https://fablab-brc-api-1.herokuapp.com/' : 'http://localhost:5000';
 
-    console.log(process.env.IS_HEROKU, BASE_URL);
+    const BASE_URL = process.env.NODE_ENV === 'development' ? 
+    'http://localhost:5000' : 'https://fablab-brc-api-1.herokuapp.com/';
+    console.log(process.env, BASE_URL);
 
     fetch(BASE_URL + '/check-in', {
         method: 'POST',
