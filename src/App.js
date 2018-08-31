@@ -39,8 +39,8 @@ class App extends React.Component {
       'project_status': this.state.project_status
     }
 
-    const BASE_URL = process.env.NODE_ENV === 'development' ? 
-    'http://localhost:5000' : 'https://fablab-brc-api-1.herokuapp.com/';
+    const BASE_URL = process.env.NODE_ENV !== 'development' ? 
+    'http://localhost:5000' : 'https://fablab-brc-api-1.herokuapp.com';
 
     fetch(BASE_URL + '/check-in', {
         method: 'POST',
@@ -50,7 +50,10 @@ class App extends React.Component {
           "Content-Type": "application/json; charset=utf-8",
         },
       })
-      .then(res => res.json())
+      .then(res => {
+        console.log('raw response', res, res.body);
+        res.json()
+      })
       .then(json => this.setState({
         doneCheckIn: true,
         lastCheckIn: json.result
