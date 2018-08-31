@@ -116,7 +116,11 @@ class App extends React.Component {
     return (
       <div className="text-center">
         <span className="h1">Gracias!</span>
-        <div>Tu check-in fue resgistrado:</div>
+        <div>{
+          this.state.lastCheckIn.already ?
+          'Tu check-in ya fue resgistrado' :
+          'Tu check-in fue resgistrado'
+        }</div>
         <div>{this.state.lastCheckIn.date}</div>
       </div>
     )
