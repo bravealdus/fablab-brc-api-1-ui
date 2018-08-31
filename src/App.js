@@ -35,12 +35,12 @@ class App extends React.Component {
 
     const data = {
       'user_email': this.state.user_email,
-      'project_title': this.state.project_title 
+      'project_title': this.state.project_title,
+      'project_status': this.state.project_status
     }
 
     const BASE_URL = process.env.NODE_ENV === 'development' ? 
     'http://localhost:5000' : 'https://fablab-brc-api-1.herokuapp.com/';
-    console.log(process.env, BASE_URL);
 
     fetch(BASE_URL + '/check-in', {
         method: 'POST',
@@ -114,9 +114,8 @@ class App extends React.Component {
     return (
       <div className="text-center">
         <span className="h1">Gracias!</span>
-        <div>
-          Tu check-in fue echo: {this.state.lastCheckIn.date}
-        </div>
+        <div>Tu check-in fue resgistrado:</div>
+        <div>{this.state.lastCheckIn.date}</div>
       </div>
     )
   }
